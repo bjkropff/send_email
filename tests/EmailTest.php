@@ -88,7 +88,43 @@
             //Assert
             $this->assertEquals("billy@gmail.com", $result);
         }
-        
+
+        function test_getSubject()
+        {
+            //Arrange
+            $name = "Bill";
+            $email = "bill@gmail.com";
+            $subject = "Just saying hi";
+            $message = "Hello to you good sir";
+            $notarobot = "123";
+            $test_email = new Email($name, $email, $subject, $message, $notarobot);
+
+            //Act
+            $result = $test_email->getSubject();
+
+            //Assert
+            $this->assertEquals("Just saying hi", $result);
+        }
+
+        function test_setName()
+        {
+            //Arrange
+            $name = "Bill";
+            $email = "bill@gmail.com";
+            $subject = "Just saying hi";
+            $message = "Hello to you good sir";
+            $notarobot = "123";
+            $test_email = new Email($name, $email, $subject, $message, $notarobot);
+
+            //Act
+            $new_subject = "Just saying hi, again";
+            $test_email->setName($new_subject);
+            $result = $test_email->getSubject();
+
+            //Assert
+            $this->assertEquals("Just saying hi, again", $result);
+        }
+
 
     }
 ?>
