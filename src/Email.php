@@ -7,21 +7,25 @@
 
     class Email
     {
-        private $description;
+        private $name;
+        private $email;
+        private $subject;
+        private $message;
+        private $notarobot;
 
-        function __construct($description)
+        function __construct($name, $email, $subject, $message, $notarobot)
         {
-            $this->description = $description;
+            $this->name = $name;
         }
 
-        function setDescription($new_description)
+        function setName($new_name)
         {
-            $this->description = (string) $new_description;
+            $this->name = (string) $new_name;
         }
 
-        function getDescription()
+        function getName()
         {
-            return $this->description;
+            return $this->name;
         }
 
         function save()
