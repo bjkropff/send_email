@@ -51,14 +51,25 @@
         {
             return $this->subject;
         }
+
         function setMessage($new_message)
         {
-            $this->subject = (string) $new_message;
+            $this->message = (string) $new_message;
         }
 
         function getMessage()
         {
             return $this->message;
+        }
+
+        function setNotarobot($new_notarobot)
+        {
+            $this->notarobot = (string) $new_notarobot;
+        }
+
+        function getNotarobot()
+        {
+            return $this->notarobot;
         }
 
         function save()

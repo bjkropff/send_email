@@ -161,5 +161,41 @@
             $this->assertEquals("Hello to you good sir, again", $result);
         }
 
+        function test_getNotarobot()
+        {
+            //Arrange
+            $name = "Bill";
+            $email = "bill@gmail.com";
+            $subject = "Just saying hi";
+            $message = "Hello to you good sir";
+            $notarobot = "123";
+            $test_email = new Email($name, $email, $subject, $message, $notarobot);
+
+            //Act
+            $result = $test_email->getNotarobot();
+
+            //Assert
+            $this->assertEquals("123", $result);
+        }
+
+        function test_setNotarobot()
+        {
+            //Arrange
+            $name = "Bill";
+            $email = "bill@gmail.com";
+            $subject = "Just saying hi";
+            $message = "Hello to you good sir";
+            $notarobot = "123";
+            $test_email = new Email($name, $email, $subject, $message, $notarobot);
+
+            //Act
+            $new_notarobot = "123123";
+            $test_email->setNotarobot($new_notarobot);
+            $result = $test_email->getNotarobot();
+
+            //Assert
+            $this->assertEquals("123123", $result);
+        }
+
     }
 ?>
