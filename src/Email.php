@@ -16,6 +16,7 @@
         function __construct($name, $email, $subject, $message, $notarobot)
         {
             $this->name = $name;
+            $this->email = $email;
         }
 
         function setName($new_name)
@@ -27,6 +28,17 @@
         {
             return $this->name;
         }
+
+        function setEmail($new_email)
+        {
+            $this->email = (string) $new_email;
+        }
+
+        function getEmail()
+        {
+            return $this->email;
+        }
+
 
         function save()
         {
