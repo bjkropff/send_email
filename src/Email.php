@@ -17,6 +17,9 @@
         {
             $this->name = $name;
             $this->email = $email;
+            $this->subject = $subject;
+            $this->message = $message;
+            $this->notarobot = $notarobot;
         }
 
         function setName($new_name)
@@ -39,6 +42,24 @@
             return $this->email;
         }
 
+        function setSubject($new_subject)
+        {
+            $this->subject = (string) $new_subject;
+        }
+
+        function getSubject()
+        {
+            return $this->subject;
+        }
+        function setMessage($new_message)
+        {
+            $this->subject = (string) $new_message;
+        }
+
+        function getMessage()
+        {
+            return $this->message;
+        }
 
         function save()
         {
